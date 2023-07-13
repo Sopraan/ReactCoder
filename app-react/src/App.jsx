@@ -1,54 +1,27 @@
 import "bootstrap/dist/css/bootstrap.min.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import NavBar from "./components/nav/NavBar";
 import Button from "react-bootstrap/Button";
 import Landing from "./components/landing/Landing";
-import ItemlistContainer from "./components/item-list-container/ItemListContainer";
-
-/*const personas = [
-  { nombre: "el zetti", edad: 27, localidad: "zamora" },
-  { nombre: "rockefeller", edad: 27, localidad: "wilde" },
-  { nombre: "nklz", edad: 36, localidad: "lomas" },
-  {},
-];
-
-function Nombre(props) {
-  return <h1 className={"nombre"}>{props.nombre}</h1>;
-}
-
-function Persona(props) {
-  return (
-    <div>
-      <Nombre nombre={props.nombre}></Nombre>
-      <h2>{props.edad}</h2>
-      <h2>{props.localidad}</h2>
-    </div>
-  );
-}
+import ItemDetail from "./pages/detail/ItemDetail";
+import ItemList from "./pages/itemList/ItemList";
 
 function App() {
   return (
-    <div className={"personas"}>
-      {personas.map((elSujeto) => {
-        return (
-          <Persona
-            nombre={elSujeto.nombre}
-            edad={elSujeto.edad}
-            localidad={elSujeto.localidad}
-          ></Persona>
-        );
-      })}
-    </div>
-  );
-}*/
-
-function App() {
-  return (
-    <div>
+    <BrowserRouter>
       <NavBar />
-      <ItemlistContainer greeting="Toastadora con alas" />
-      <Landing />
-    </div>
+      <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route path="/productos/telefonos" element={<ItemList tipo="cel" />} />
+        <Route path="/productos/notebooks" element={<ItemList tipo="note" />} />
+        <Route path="/producto/:id" element={<ItemDetail id="id" />} />
+        <Route path="/productos" element={<ItemList />} />
+
+        <Route path="*" element={<h1>404 - Not found</h1>} />
+      </Routes>
+    </BrowserRouter>
   );
 }
+
 export default App;
