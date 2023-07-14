@@ -15,7 +15,7 @@ function App() {
         <Route path="/" element={<Landing />} />
         <Route path="/productos/telefonos" element={<ItemList tipo="cel" />} />
         <Route path="/productos/notebooks" element={<ItemList tipo="note" />} />
-        <Route path="/producto/:id" element={<ItemDetail id="id" />} />
+        <Route path="/producto/:id" element={<ItemDetail />} />
         <Route path="/productos" element={<ItemList />} />
 
         <Route path="*" element={<h1>404 - Not found</h1>} />

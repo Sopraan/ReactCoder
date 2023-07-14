@@ -2,6 +2,7 @@ import React from "react";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 const Item = (props) => {
   return (
@@ -12,8 +13,8 @@ const Item = (props) => {
 
         <Card.Text>{`$ ${props.precio}`}</Card.Text>
 
-        <Button variant="primary" to={"/productos/:id"}>
-          <Link style={{ color: "white" }} to={"/productos/:id"}>
+        <Button variant="primary">
+          <Link style={{ color: "white" }} to={`/producto/${props.id}`}>
             Detalles
           </Link>
         </Button>

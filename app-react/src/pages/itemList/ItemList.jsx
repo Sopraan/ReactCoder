@@ -14,12 +14,13 @@ function ItemList(props) {
         {catalogo
           .filter((e) => e.tipo === props.tipo || props.tipo === undefined)
           .map((element) => (
-            <Col>
+            <Col key={element.id}>
               <Item
                 thumnail={element.thumnail}
                 name={element.name}
                 precio={element.precio}
                 descripcion={element.descripcion}
+                id={element.id}
               />
             </Col>
           ))}
