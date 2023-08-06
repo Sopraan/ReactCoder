@@ -7,11 +7,11 @@ import { useParams } from "react-router-dom";
 const Item = (props) => {
   return (
     <Card style={{ width: "18rem" }}>
-      <Card.Img variant="top" src={props.thumnail} />
+      <Card.Img variant="top" src={props.thumbnail} />
       <Card.Body>
         <Card.Title>{props.name}</Card.Title>
 
-        <Card.Text>{`$ ${props.precio}`}</Card.Text>
+        <Card.Text>{`$ ${props.price}`}</Card.Text>
 
         <Button variant="primary">
           <Link style={{ color: "white" }} to={`/producto/${props.id}`}>
